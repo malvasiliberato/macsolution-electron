@@ -1,0 +1,67 @@
+{
+  "name": "macsolution",
+  "version": "1.0.1",
+  "description": "Applicazione desktop Electron per MacSolutionRoom",
+  "main": "index.js",
+  "author": "Tuo Nome o Azienda",
+  "license": "ISC",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^36.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "electron-log": "^5.4.0",
+    "electron-updater": "^6.6.2",
+    "node-fetch": "^3.3.2"
+  },
+  "build": {
+    "appId": "com.macsolution.desktop",
+    "productName": "Mac Solution Room",
+    "copyright": "© 2025 Hiram Software",
+    "protocols": [
+      {
+        "name": "MacSolutionRoom",
+        "schemes": [
+          "myapp"
+        ]
+      }
+    ],
+    "publish": {
+      "provider": "generic",
+      "url": "https://macsolutionroom.net/electron-updates/"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/.cache/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "extraResources": [
+      {
+        "from": "public/",
+        "to": "public"
+      }
+    ],
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build
+dist/
+out/
+build/
+
+# IDE
+.idea/
+.vscode/
+
+# Electron / OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Backup
+*-bk.*
