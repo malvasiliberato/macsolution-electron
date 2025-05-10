@@ -34,10 +34,6 @@
       "provider": "generic",
       "url": "https://macsolutionroom.net/electron-updates/"
     },
-    "win": {
-      "target": "nsis",
-      "icon": "assets/icon.ico"
-    },
     "files": [
       "**/*",
       "!node_modules/.cache/**/*"
@@ -45,23 +41,18 @@
     "directories": {
       "buildResources": "assets"
     },
-    "extraResources": [
-      {
-        "from": "public/",
-        "to": "public"
-      }
-    ],
     "nsis": {
       "oneClick": false,
       "perMachine": true,
       "allowToChangeInstallationDirectory": true
     },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
     "mac": {
       "target": "dmg",
       "icon": "assets/icon.icns"
-    },
-    "linux": {
-      "target": "AppImage"
     }
   }
 }
